@@ -8,8 +8,8 @@ services:
     build:
       context: ./WebApplication1
       dockerfile: Dockerfile
-  
-  networks:
-    default:
-      external:
-        name: myNetNginxReverseProxy
+ 
+networks:
+  default:
+    external:
+      name: myNetNginxReverseProxy
