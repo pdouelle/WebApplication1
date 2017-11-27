@@ -3,6 +3,10 @@ version: '3'
 services:
   webapplication1:
     image: webapplication1
+    environment:
+      - VIRTUAL_HOST=dichotomiedev.hopto.org
     build:
       context: ./WebApplication1
       dockerfile: Dockerfile
+    networks:
+      - myNetNginxReverseProxy
