@@ -9,4 +9,8 @@ services:
       - ./workspace/WebApplication1:/src:rw
     working_dir: /src
     command: /bin/bash -c "dotnet restore ./WebApplication1.sln && dotnet publish ./WebApplication1.sln -c Release -o ./obj/Docker/publish"
-    tty: true
+
+networks:
+  default:
+    external:
+      name: myjenkinsdocker_default
