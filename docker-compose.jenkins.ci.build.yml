@@ -7,5 +7,5 @@ services:
       - DOCKER_HOST=127.0.0.1:80
     volumes:
       - .:/src
-    working_dir: /var/jenkins_home/workspace/WebApplication1
+    working_dir: /var/jenkins_home/workspace/WebApplication1/WebApplication1
     command: /bin/bash -c "dotnet restore ./WebApplication1.sln && dotnet publish ./WebApplication1.sln -c Release -o ./obj/Docker/publish"
