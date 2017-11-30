@@ -6,7 +6,7 @@ services:
     environment:
       - DOCKER_HOST=127.0.0.1:80
     volumes:
-      - ./workspace/WebApplication1:/src:rw
+      - ./workspace/WebApplication1:/src
     working_dir: /src
     command: /bin/bash -c "dotnet restore ./WebApplication1.sln && dotnet publish ./WebApplication1.sln -c Release -o ./obj/Docker/publish"
 networks:
