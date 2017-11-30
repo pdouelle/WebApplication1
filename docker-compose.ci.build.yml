@@ -8,5 +8,5 @@ services:
     volumes:
       - ./workspace/WebApplication1:/src:rw
     working_dir: /src
-    command: /bin/bash -c "bash"
+    command: /bin/bash -c "bin/bash"
     #command: /bin/bash -c "dotnet restore ./WebApplication1.sln && dotnet publish ./WebApplication1.sln -c Release -o ./obj/Docker/publish"
