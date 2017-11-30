@@ -12,4 +12,4 @@ services:
 networks:
   default:
     external:
-      name: host
+      name: myNetNginxReverseProxy
