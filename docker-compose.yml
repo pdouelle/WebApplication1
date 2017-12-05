@@ -2,7 +2,7 @@ version: '3'
 
 services:
   webapplication1:
-    image: ${IMAGE}
+    image: ${CONTAINER_IMAGE}
     environment:
       - VIRTUAL_HOST=dichotomiedev.hopto.org
     build:
