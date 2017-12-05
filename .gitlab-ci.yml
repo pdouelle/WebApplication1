@@ -3,9 +3,6 @@ image: docker:latest
 services:
 - docker:dind
 
-variables:
-- CONTAINER_TEST_IMAGE: registry.gitlab.com/pdouelle/webapplication1:$CI_BUILD_REF_NAME
-
 before_script:
 - apk add --update python py-pip python-dev && pip install docker-compose # install docker-compose
 - docker version
@@ -20,4 +17,4 @@ build:
   script:
      - docker-compose -f docker-compose.ci.build.yml up
      - docker-compose build
-     - docker push $CONTAINER_TEST_IMAGE
+     - docker push registry.gitlab.com/pdouelle/webapplication1:latest
