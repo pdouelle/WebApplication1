@@ -19,5 +19,5 @@ build:
   stage: build
   script:
      - docker-compose -f docker-compose.ci.build.yml up
-     - docker-compose build --env TAG=$CI_BUILD_REF_NAME
+     - docker-compose build --build-arg TAG=$CI_BUILD_REF_NAME
      - docker push $CONTAINER_TEST_IMAGE
