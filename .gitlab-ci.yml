@@ -10,7 +10,7 @@ before_script:
 - docker login -u gitlab-ci-token -p $CI_JOB_TOKEN $CI_REGISTRY
 
 variables:
-    CONTAINER_IMAGE: registry.gitlab.com/pdouelle/webapplication1:$CI_BUILD_REF_NAME
+    CONTAINER_IMAGE: $CI_REGISTRY/pdouelle/webapplication1:$CI_BUILD_REF_NAME
 
 stages:
   - build
