@@ -10,7 +10,7 @@ before_script:
 - docker login -u gitlab-ci-token -p $CI_JOB_TOKEN $CI_REGISTRY
 
 variables:
-    CONTAINER_IMAGE: $CI_REGISTRY/$CI_PROJECT_PATH:$CI_BUILD_REF_NAME
+    CONTAINER_IMAGE: registry.gitlab.com/pdouelle/WebApplication1:$CI_BUILD_REF_NAME
 
 stages:
   - build
@@ -19,6 +19,6 @@ build:
   stage: build
   script:
      - docker-compose -f docker-compose.ci.build.yml up
-     - export CONTAINER_IMAGE=$CONTAINER_IMAGE
+     - export TAG=$CI_BUILD_REF_NAME
      - docker-compose build
      - docker push $CONTAINER_IMAGE
