@@ -2,7 +2,7 @@ version: '3'
 
 services:
   webapplication1:
-    image: ${CONTAINER_IMAGE}
+    image: registry.gitlab.com/pdouelle/WebApplication1:${TAG}
     environment:
       - VIRTUAL_HOST=dichotomiedev.hopto.org
     build:
